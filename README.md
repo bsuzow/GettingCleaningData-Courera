@@ -1,5 +1,7 @@
 # Data Science - Getting and Cleaning Data Project
 This repo is created for the course project of the "Getting and Cleaning Data" Coursera class for the Data Science Specialization. 
+The main objective of the project is to learn how to make tidy the data collected in a real world experimentation.
+
 All files are downloaded from [the data file archive](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip). Unzipping the archive creates a directory called "UCI HAR Dataset" to which all data files get dumped. For the context of the data, please refer to [the UCI site](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones). 
 Per the project instructions, only the mean and standard deviation features get extracted. The variables (features) whose names bear either "mean()" or "std()" satistfy this condition.  The list of such variables are as follows:
     (Reference feature_info.txt which is available in the "UCI HAR Dataset" directory for details.)  
@@ -21,3 +23,9 @@ Per the project instructions, only the mean and standard deviation features get 
 [57] "fBodyGyro-std()-Y"           "fBodyGyro-std()-Z"           "fBodyAccMag-mean()"          "fBodyAccMag-std()"          
 [61] "fBodyBodyAccJerkMag-mean()"  "fBodyBodyAccJerkMag-std()"   "fBodyBodyGyroMag-mean()"     "fBodyBodyGyroMag-std()"     
 [65] "fBodyBodyGyroJerkMag-mean()" "fBodyBodyGyroJerkMag-std()" 
+
+The test and train data sets get combined per the project instructions. The gather() and separate() functions from the tidyr package get utilized to ensure the final dataset is compliant with the following rules of a tidy dataset:
+- Each column is a variable.
+- Each row is an observation.
+
+R script: run_analysis.R
