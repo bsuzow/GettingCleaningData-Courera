@@ -1,4 +1,4 @@
-# hello-world
-For getting my feet wet on Github workflow.
-I am a life time learner.
-Continue to practice to learn the workflow.
+# Data Science - Getting and Cleaning Data Project
+This repo is created for the course project of the "Getting and Cleaning Data" Coursera class for the Data Science Specialization. 
+All files are downloaded from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip. Unzipping the archive creates a directory called "UCI HAR Dataset" to which all data files get dumped. For the context of the data, please refer to http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones. 
+Per the project instructions, only the mean and standard deviation features get extracted. The variables (features) whose names bear either "mean()" or "std()" satistfy this condition. Reference feature_info.txt which is available in the UCI HAR Dataset directory for details.
