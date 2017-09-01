@@ -11,32 +11,31 @@ library(tidyr)
 #-------------
 
 # Change the following path accordingly to to the location of the data files downloaded from the UCI site.
-# The directory name, "UCI HAR Dataset" gets created when unzipping the file archive.
-
-fileLocation = "E:/coursera/Getting and Cleaning Data-Aug2017/WK4-assmt/UCI HAR Dataset"
+# The directory name, "UCI HAR Dataset" gets created when unzipping the file archive.  Set the working
+# directory to this directory.
 
 
 # load the test data set  (x_test.txt)
-rawtestX<- as.data.table(read.table(paste0(fileLocation,"/test/x_test.txt")))
+rawtestX<- as.data.table(read.table("test/x_test.txt"))
 
 # load the test activity labels list (y_test.txt)
-rawtestY<- as.data.table(read.table(paste0(fileLocation,"/test/y_test.txt")))
+rawtestY<- as.data.table(read.table("test/y_test.txt"))
 
 # load the subject list for the test data set (subject_test.txt)
-subjtest<- as.data.table(read.table(paste0(fileLocation,"/test/subject_test.txt")))
+subjtest<- as.data.table(read.table("test/subject_test.txt"))
 
 #-------------
 # Loading train dataset
 #-------------
 
 # load the train data set  (x_train.txt)
-rawtrainX<- as.data.table(read.table(paste0(fileLocation,"/train/x_train.txt")))
+rawtrainX<- as.data.table(read.table("train/x_train.txt"))
 
 # load the train activity labels list (y_train.txt)
-rawtrainY<- as.data.table(read.table(paste0(fileLocation,"/train/y_train.txt")))
+rawtrainY<- as.data.table(read.table("train/y_train.txt"))
 
 # load the subject list for the train data set (subject_train.txt)
-subjtrain<- read.table(paste0(fileLocation,"/train/subject_train.txt"))
+subjtrain<- read.table("train/subject_train.txt")
 
 #------------------------------------------------------------------------------------------
 # Merging the training and the test data sets & add the subject ID and activity label columns
@@ -50,7 +49,7 @@ actall  <- rbind(rawtestY,rawtrainY)
 # Loading the features/columns list (features.txt)
 #----------------------------------------------
 
-features<- as.data.table(read.table(paste0(fileLocation,"/features.txt")))
+features<- as.data.table(read.table("features.txt"))
 colnamevec<- as.character(features$V2)  # convert V2's class from factor to char
 
 # The features list has duplicate entries.  They cause an error when the select() function is called to extract the columns
@@ -98,7 +97,7 @@ dtHARnet <- dtHAR %>% mutate(statType=gsub("\\(\\)","",statType))  # remove () f
 # Making the activityLabel column descriptive
 #--------------------------------------------
 
-dtActLabels <- as.data.table(read.table(paste0(fileLocation,"/activity_labels.txt")))
+dtActLabels <- as.data.table(read.table("activity_labels.txt"))
 facAct <- as.factor(dtActLabels$V2)
 
 dtHARnet <- dtHARnet %>% mutate(activityLabel=facAct[activityLabel])
@@ -110,6 +109,8 @@ dtHARnet <- as.data.table(dtHARnet)
 
 dtActMean <- dtHARnet[statType=="mean",mean(measurement),by=.(subjID,activityLabel)]
 colnames(dtActMean)[3] <- "avg"
+
+write.table(dtActMean, file="dtActMean.txt",row.names=FALSE)
 
 #---------------
 # end of script
