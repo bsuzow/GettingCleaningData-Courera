@@ -89,6 +89,8 @@ dtHAR <- dttemp  %>%  mutate(activityLabel=actall$V1) %>% mutate(subjID=subjall$
 #--------------------
 
 dtHAR <- dtHAR %>% gather(key,measurement,-activityLabel, -subjID) %>% separate(key,into=c("measurementType","statType","axis"),sep=c("-"),extra="drop")
+dtHAR <- dtHAR %>% mutate(domainType=substr(measurementType,1,1))
+dtHAR <- dtHAR %>% mutate(sensorType=ifelse(grepl("Acc",measurementType),"Acc","Gyro"))
 dtHARnet <- dtHAR %>% mutate(statType=gsub("\\(\\)","",statType))  # remove () from the statType values
 
 
