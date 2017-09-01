@@ -29,13 +29,28 @@ The test and train data sets get combined per the project instructions. The gath
 
 ### R script: run_analysis.R
 
-* Set the directory location where the files downloaded from the site are stored.
+* Set the directory location where the files downloaded from [the archive](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) are stored.  
 * Read and load the test dataset files.
     * x_test.txt (2947 lines) for observations in a matrix format.
     * y_test.txt (2947 lines) for Activity labels (1 through 6) associated with the observations matrix. This gets added as a variable to the test data table in the later part of the script.
     * subject_test.txt (2947 lines) for Subject IDs (1 through 30) associated with the observations matrix. This also gets added as a variable to the test data table in the later part of the script.
 * Read and load the x_train.txt, y_train.txt, subject_train.txt file for the train dataset.
     * The same descriptions as in the test dataset apply except for the number of lines in each file.  It is 7352 in the train files.
-* Merge the train and the test datasets.
-* Read and load the features/variables file.
+* Merge the train and the test datasets. 
+* Read, load and clean up the features/variables file.  As duplicate variable names are found, they need to be changed to ensure all variable names are distinctive. 
+* Replace the column names of the combined dataset with the cleaned-up features list. 
+* Extract only the mean and standard deviation columns (per the project instructions), and add Activity labels and Subject IDs as additional columns.  
+* Tidy the combined dataset using the gather and separate functions of the tidyr package.
+* Make the Activity label column values descriptive.
+   
+    | Activity Label| Description |
+    | ------------- |:-------------:|
+    | 1    |WALKING |
+    | 2      |WALKING_UPSTAIRS    |
+    | 3 | WALKING_DOWNSTAIRS    |
+    | 4    | SITTING |
+    | 5      | STANDING      |
+    | 6 | LAYING    |
+
+
     
