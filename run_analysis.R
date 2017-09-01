@@ -10,8 +10,7 @@ library(tidyr)
 # Loading test dataset
 #-------------
 
-# Change the following path accordingly to to the location of the data files downloaded from the UCI site.
-# The directory name, "UCI HAR Dataset" gets created when unzipping the file archive.  Set the working
+# The directory named, "UCI HAR Dataset" gets created when unzipping the file archive.  Set the working
 # directory to this directory.
 
 
