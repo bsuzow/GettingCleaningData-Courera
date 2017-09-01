@@ -28,10 +28,14 @@ The test and train data sets get combined per the project instructions. The gath
 - Each row is an observation.
 
 ### R script: run_analysis.R
-* Reading the test dataset files.
+
+* Set the directory location where the files downloaded from the site are stored.
+* Read and load the test dataset files.
     * x_test.txt (2947 lines) for observations in a matrix format.
-    * y_test.txt (2947 lines) for Activity labels (1 through 6) associated with the observations matrix. This gets added as a variable to the test data table.
-    * subject_test.txt (2947 lines) for Subject IDs (1 through 30) associated with the observations matrix. This also gets added as a variable to the test data table.
-* Reading the x_train.txt, y_train.txt, subject_train.txt file for the train dataset.
+    * y_test.txt (2947 lines) for Activity labels (1 through 6) associated with the observations matrix. This gets added as a variable to the test data table in the later part of the script.
+    * subject_test.txt (2947 lines) for Subject IDs (1 through 30) associated with the observations matrix. This also gets added as a variable to the test data table in the later part of the script.
+* Read and load the x_train.txt, y_train.txt, subject_train.txt file for the train dataset.
     * The same descriptions as in the test dataset apply except for the number of lines in each file.  It is 7352 in the train files.
+* Merge the train and the test datasets.
+* Read and load the features/variables file.
     
