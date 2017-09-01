@@ -27,4 +27,9 @@ The test and train data sets get combined per the project instructions. The gath
 - Each column is a variable.
 - Each row is an observation.
 
-R script: run_analysis.R
+### R script: run_analysis.R
+- Reading the test dataset files.
+--x_test.txt for observations in a matrix format.
+--y_test.txt for activity labels (1 through 6) associated with the observations matrix. This gets added as a variable to the test data table.
+--subject_test.txt for subject IDs (1 through 30) associated with the observations matrix. This also gets added as a variable to the test data table.
+- Reading the x_train.txt, x_test.txt, subject_train.txt file for the train dataset.
