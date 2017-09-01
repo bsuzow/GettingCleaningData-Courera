@@ -41,7 +41,7 @@ The test and train data sets get combined per the project instructions. The gath
 * Replace the column names of the combined dataset with the cleaned-up features list. 
 * Extract only the mean and standard deviation columns (per the project instructions), and add Activity labels and Subject IDs as additional columns.  
 * Tidy the combined dataset using the gather and separate functions of the tidyr package.
-* Make the Activity label column values descriptive.
+* Make the Activity label column values descriptive.  The label translation table is as follows:
    
     | Activity Label| Description |
     | ------------- |:-------------:|
@@ -52,5 +52,18 @@ The test and train data sets get combined per the project instructions. The gath
     | 5      | STANDING      |
     | 6 | LAYING    |
 
+* Create an independent dataset for the average of each activity measurement for each subject.
 
+### Variable Names
+
+1. Data Table: dtHARnet
+    
+    | Variable Names  | Description |
+    | -------------   |:------------------------------------------------------------------:|
+    | activityLabel   | Activity type a subject performed. The possible values are listed in the R Script section of this document  |
+    | subjID|         | Anonymous ID (1 through 30) assigned to the volunteers who participated in the experiments.  |
+    | measurementType | Measurement type. Reference features_info.txt and readme.txt delivered with the dataset.     |
+    | statType        | Either mean or standard deviation|
+    | axis            | Signal direction: X or Y or Z if applicable      |
+    | measurement     | Measurement of activities of daily living (ADL) while carrying a waist-mounted smartphone with embedded inertial sensors. |
     
