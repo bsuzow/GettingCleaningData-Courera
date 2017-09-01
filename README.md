@@ -6,7 +6,7 @@ The main objective of the project is to learn how to make tidy the data collecte
 
 All files are downloaded from [the data file archive](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip). Unzipping the archive creates a directory called "UCI HAR Dataset" to which all data files get dumped. 
 For the context of the data, refer to [the UCI site](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones). 
-Per the project instructions, only the mean and standard deviation features get extracted. The variables (features) whose names bear either "mean()" or "std()" satistfy this condition.  The list of such variables are as follows:
+Per the project instructions, only the mean and standard deviation features get extracted. The variables (features) whose names bear either "mean()" or "std()" satistfy this condition.  The list of such features are as follows:
     (Reference feature_info.txt which is available in the "UCI HAR Dataset" directory for details.)  
     
 [1] "tBodyAcc-mean()-X"           "tBodyAcc-mean()-Y"           "tBodyAcc-mean()-Z"           "tBodyAcc-std()-X"           
